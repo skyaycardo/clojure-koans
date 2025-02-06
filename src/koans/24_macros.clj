@@ -20,7 +20,7 @@
         :else
         (let [operator (second form)
               first-arg (first form)
-              others (rest (rest form))]
+              others (drop 2 form)]
           `(~operator
             (recursive-infix ~first-arg)
             (recursive-infix ~others)))))
